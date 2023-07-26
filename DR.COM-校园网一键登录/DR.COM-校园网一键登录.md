@@ -16,8 +16,7 @@ description: 不知道你们有没有这种体验，每次断网登录校园网�
 
 相应的抓包教程这里就不再赘述，过滤你认证界面的ip然后在登录之前把记录都清除一下，点登录后面紧接着抓到的包就是我们所需要的
 
-![](<.gitbook/assets/image (1).png>)
-
+![Alt text](<image (1).png>)
 这个是抓到的包，我们只需要复制最上面那一段就好了，然后这个软件的工作就到此为止
 
 接下来就是在那个http快捷方式里设置一下
@@ -32,6 +31,6 @@ var a=getWifiIPAddress();
 
 再点添加代码片段-->变量-->设置变量-->ip-->右边双引号删掉填入a 如图即可
 
-![](<.gitbook/assets/image (2).png>)
+![Alt text](<image (2).png>)
 
-保存保存然后把这个快捷方式发送到桌面，下次自动连上校园网就直接点一下就可以认证好啦![呲牙](http://static.coolapk.com/emoticons/v9/coolapk\_emotion\_3\_ciya.png)![呲牙](http://static.coolapk.com/emoticons/v9/coolapk\_emotion\_3\_ciya.png)
+保存保存然后把这个快捷方式发送到桌面，下次自动连上校园网就直接点一下就可以认证好啦!

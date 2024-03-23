@@ -24,22 +24,24 @@ headers = {
 }
 
 response = requests.post(url, headers=headers, data=data)
+print(response.text)
+if response.status_code == 200 and response.json()['code'] == 0:
+    print('验证码发送成功🎉')
+    verify_code  = input('请查看手机验证码，并输入：')
+    # 使用验证码进行登录操作，获取token
+    url2 = "https://userapi.qiekj.com/user/reg"
+    headers2 = headers
+    headers2["Content-Length"] = "49"
 
-# 提示用户查看手机，并输入收到的验证码
-verify_code  = input('请查看手机验证码，并输入：')
+    data2 = {
+        'channel': 'android_app',
+        'phone': phone_number,
+        'verify': verify_code
+    }
 
-# 使用验证码进行登录操作，获取token
-url2 = "https://userapi.qiekj.com/user/reg"
-headers2 = headers
-headers2["Content-Length"] = "49"
-
-data2 = {
-    'channel': 'android_app',
-    'phone': phone_number,
-    'verify': verify_code
-}
-
-response2 = requests.post(url2, headers=headers2, data=data2)
-token = response2.json()['data']['token']
-
-print(f'Token: {token}')
+    response2 = requests.post(url2, headers=headers2, data=data2)
+    token = response2.json()['data']['token']
+    print(response2.text)
+    print(f'Token: {token}')
+else:
+    print('验证码发送失败✖')

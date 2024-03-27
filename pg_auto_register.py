@@ -163,10 +163,10 @@ for i in range(1,70):
     
     # 开关数据网络切换IP
     print(f"\033[32m【7】切换IP中...\033[0m")
-    response = requests.get('http://192.168.42.1:9999/click?x=683&y=1091')
+    response = requests.get('http://192.168.50.1:9999/click?x=683&y=1091')
     print(f"✖关闭数据网络")
     time.sleep(1)
-    response = requests.get('http://192.168.42.1:9999/click?x=683&y=1091')
+    response = requests.get('http://192.168.50.1:9999/click?x=683&y=1091')
     print(f"✔开启数据网络")
     time.sleep(3)
     old_ip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', ip)[0]
